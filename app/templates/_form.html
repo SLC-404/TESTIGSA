@@ -1,0 +1,25 @@
+{% macro field(f) %}
+  {% set invalid = " is-invalid" if f.errors else "" %}
+  {% if f.type == "BooleanField" %}
+    <div class="form-check mb-3">
+      {{ f(class="form-check-input") }} {{ f.label(class="form-check-label") }}
+    </div>
+  {% elif f.type == "SelectField" %}
+    <div class="mb-3">
+      {{ f.label(class="form-label") }}
+      {{ f(class="form-select" + invalid) }}
+      {% for e in f.errors %}<div class="invalid-feedback">{{ e }}</div>{% endfor %}
+    </div>
+  {% else %}
+    <div class="mb-3">
+      {{ f.label(class="form-label") }}
+      {{ f(class="form-control" + invalid) }}
+      {% for e in f.errors %}<div class="invalid-feedback">{{ e }}</div>{% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro status_badge(task) %}
+  {% set colors = {"pending": "secondary", "in_progress": "warning", "completed": "success"} %}
+  <span class="badge bg-{{ colors.get(task.status, 'secondary') }}">{{ task.status_label }}</span>
+{% endmacro %}
