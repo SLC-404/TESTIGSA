@@ -15,7 +15,7 @@ def database_uri():
     parts = [
         f"DRIVER={{{os.getenv('DB_DRIVER', 'ODBC Driver 17 for SQL Server')}}}",
         f"SERVER={host},{port}" if port else f"SERVER={host}",
-        f"DATABASE={os.getenv('DB_DATABASE', 'tareas')}",
+        f"DATABASE={os.getenv('DB_DATABASE', 'examen')}",
         "TrustServerCertificate=yes",
     ]
     if os.getenv("DB_USERNAME"):
@@ -27,7 +27,7 @@ def database_uri():
 
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "dev")
+    SECRET_KEY = os.getenv("SECRET_KEY") or "dev"
     SQLALCHEMY_DATABASE_URI = database_uri()
     SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True}
     APP_NAME = "Tareas"

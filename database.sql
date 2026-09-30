@@ -1,11 +1,11 @@
-IF DB_ID('tareas') IS NULL
-    CREATE DATABASE tareas;
+IF DB_ID('examen') IS NULL
+    CREATE DATABASE examen;
 GO
 
-USE tareas;
+USE examen;
 GO
 
-CREATE TABLE tasks (
+CREATE TABLE cesar (
     id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     title NVARCHAR(150) NOT NULL,
     description NVARCHAR(MAX) NULL,

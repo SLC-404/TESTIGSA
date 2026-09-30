@@ -1,10 +1,8 @@
-# Tareas (Windows)
-
 ## 1. Instalar
 
 ```cmd
-git clone https://github.com/TU_USUARIO/examenigsa.git
-cd examenigsa
+git clone https://github.com/SLC-404/TESTIGSA.git
+cd TESTIGSA
 python -m venv env
 env\Scripts\activate
 pip install -r requirements.txt
@@ -20,7 +18,7 @@ En `.env` poner el servidor y la base:
 
 ```
 DB_HOST=localhost\SQLEXPRESS
-DB_DATABASE=tareas
+DB_DATABASE=examen
 ```
 
 ## 3. Base de datos
@@ -28,7 +26,7 @@ DB_DATABASE=tareas
 En SQL Server:
 
 ```sql
-CREATE DATABASE tareas;
+CREATE DATABASE examen;
 ```
 
 Luego:

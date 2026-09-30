@@ -13,7 +13,7 @@ STATUSES = {
 
 
 class Task(db.Model):
-    __tablename__ = "tasks"
+    __tablename__ = "cesar"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(Unicode(150))

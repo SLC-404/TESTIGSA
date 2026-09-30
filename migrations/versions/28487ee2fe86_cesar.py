@@ -9,7 +9,7 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table('tasks',
+    op.create_table('cesar',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.Unicode(length=150), nullable=False),
     sa.Column('description', sa.Unicode(), nullable=True),
@@ -20,4 +20,4 @@ def upgrade():
 
 
 def downgrade():
-    op.drop_table('tasks')
+    op.drop_table('cesar')
